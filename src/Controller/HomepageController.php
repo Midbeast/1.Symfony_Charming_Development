@@ -19,10 +19,18 @@ class HomepageController extends AbstractController
 
     /**
      * Route with Wildcards
-     * @Route("{name}", name="isabell")
+     * @Route("question/{question}", name="question")
      */
-    public function showQuestion(string $name) : Response
+    public function showQuestion(string $question) : Response
     {
-        return new Response($name .' what are you doing here? :D');
+        $answers = [
+            'Because my shoes are empty',
+            'Because I am super hungry lul',
+            'Because Paladins is an amazing game!'
+        ];
+        return $this->render('/questions/question.html.twig', [
+            'question'=> $question,
+            'answers'=> $answers,
+        ]);
     }
 }
