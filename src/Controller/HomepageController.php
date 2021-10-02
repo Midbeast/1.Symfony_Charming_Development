@@ -14,8 +14,7 @@ class HomepageController extends AbstractController
      */
     public function home(): Response
     {
-        return new Response('This is a Response with an annotation and a Controller');
-    }
+        return $this->render('/questions/homepage.html.twig');    }
 
     /**
      * Route with Wildcards
